@@ -39,6 +39,14 @@
             }
         },
         {
+            "Key": "1f918538-fc05-4bee-8862-8476109c2d8f",
+            "Value": {
+                "id": "a64d8cfd-6f2a-4368-b455-cb85f0c98fa6",
+                "resourcePath": "sprites\\spr_Ball\\spr_Ball.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "39f7972f-24d2-49bf-989a-a5a9dd5a303c",
             "Value": {
                 "id": "7d3784d9-fb4b-4a75-9585-53a480ae6209",
@@ -60,6 +68,14 @@
                 "id": "e850c93f-9dab-4c2d-8c4c-fe37953b43e8",
                 "resourcePath": "views\\3e90ac00-5b24-4ee4-8e20-9159f94f8f2b.yy",
                 "resourceType": "GMFolder"
+            }
+        },
+        {
+            "Key": "4136ac9d-a0bd-4fc4-ad4c-83c7364b3ebc",
+            "Value": {
+                "id": "bcb46e58-68e3-4871-813e-6cdd99c6bd7c",
+                "resourcePath": "tilesets\\til_Grid\\til_Grid.yy",
+                "resourceType": "GMTileSet"
             }
         },
         {
@@ -108,14 +124,6 @@
                 "id": "2c678cb8-021d-4f30-a99d-e9c67b7a76dc",
                 "resourcePath": "views\\794f637f-ce2d-49c7-af0a-8206f79cf80e.yy",
                 "resourceType": "GMFolder"
-            }
-        },
-        {
-            "Key": "7cd7acf3-7fcb-44af-8d9d-fd85d76c0021",
-            "Value": {
-                "id": "4be611ce-29fb-4b52-bbef-9252e9f3c888",
-                "resourcePath": "scripts\\PlayerCollision\\PlayerCollision.yy",
-                "resourceType": "GMScript"
             }
         },
         {
@@ -191,14 +199,6 @@
             }
         },
         {
-            "Key": "e7b05459-373e-4ed9-9c22-ef851a35f665",
-            "Value": {
-                "id": "bfba55db-c1fe-402d-a2eb-90466d197682",
-                "resourcePath": "scripts\\PlayerStateFree\\PlayerStateFree.yy",
-                "resourceType": "GMScript"
-            }
-        },
-        {
             "Key": "e9170b82-f5ff-4e0a-9386-993c5d030f70",
             "Value": {
                 "id": "d880a9e6-e72a-4cb8-ac48-ad6a3a1b9e64",
@@ -248,8 +248,7 @@
         }
     ],
     "script_order": [
-        "e7b05459-373e-4ed9-9c22-ef851a35f665",
-        "7cd7acf3-7fcb-44af-8d9d-fd85d76c0021"
+        
     ],
     "tutorial": ""
 }
