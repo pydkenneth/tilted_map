@@ -7,7 +7,7 @@
     "HTile": false,
     "VTile": false,
     "bbox_bottom": 127,
-    "bbox_left": 64,
+    "bbox_left": 0,
     "bbox_right": 127,
     "bbox_top": 0,
     "bboxmode": 0,
@@ -29,18 +29,25 @@
             },
             "images": [
                 {
-                    "id": "8806c6f5-0c65-4ae9-b91c-7d67bf6e5b4a",
+                    "id": "6e6ce177-d66c-4cfb-a670-a143b873d6c9",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
                     "FrameId": "dc0e39b3-c268-48d7-bc66-44911e26a08b",
-                    "LayerId": "b3e8ab6f-0074-4f64-a504-2d6edf67cd5b"
+                    "LayerId": "3a357643-858e-47ff-9989-52a77dfd5efa"
                 },
                 {
-                    "id": "15922c4a-f1c0-47cb-858e-bfcd3f539fa1",
+                    "id": "4d1fd8f1-550d-4785-8fe6-5a2943177588",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
                     "FrameId": "dc0e39b3-c268-48d7-bc66-44911e26a08b",
-                    "LayerId": "6eaad1ce-d23f-4648-8599-000889439666"
+                    "LayerId": "f253cf99-e645-4c38-9428-39df99f63e11"
+                },
+                {
+                    "id": "872786d0-9fdc-48cd-a9ea-f838558a3824",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "dc0e39b3-c268-48d7-bc66-44911e26a08b",
+                    "LayerId": "1c254aea-7ee5-46a1-9946-5a1837a61c88"
                 }
             ]
         },
@@ -58,28 +65,46 @@
             },
             "images": [
                 {
-                    "id": "e4f94f56-a713-4038-88ee-e616266bc818",
+                    "id": "57708eb0-3d82-48ee-bed4-14fd6e7c3217",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
                     "FrameId": "f3117e24-3854-4afb-8ad4-4c3253c7d6e6",
-                    "LayerId": "b3e8ab6f-0074-4f64-a504-2d6edf67cd5b"
+                    "LayerId": "3a357643-858e-47ff-9989-52a77dfd5efa"
                 },
                 {
-                    "id": "38084eab-5e14-4da7-b6a2-d941b78f718d",
+                    "id": "bfe34226-5053-4f52-b348-eb9f6fe1014a",
                     "modelName": "GMSpriteImage",
                     "mvc": "1.0",
                     "FrameId": "f3117e24-3854-4afb-8ad4-4c3253c7d6e6",
-                    "LayerId": "6eaad1ce-d23f-4648-8599-000889439666"
+                    "LayerId": "f253cf99-e645-4c38-9428-39df99f63e11"
+                },
+                {
+                    "id": "40452046-5a15-49b3-878d-bb223488e32e",
+                    "modelName": "GMSpriteImage",
+                    "mvc": "1.0",
+                    "FrameId": "f3117e24-3854-4afb-8ad4-4c3253c7d6e6",
+                    "LayerId": "1c254aea-7ee5-46a1-9946-5a1837a61c88"
                 }
             ]
         }
     ],
-    "gridX": 32,
-    "gridY": 32,
+    "gridX": 16,
+    "gridY": 8,
     "height": 128,
     "layers": [
         {
-            "id": "6eaad1ce-d23f-4648-8599-000889439666",
+            "id": "1c254aea-7ee5-46a1-9946-5a1837a61c88",
+            "modelName": "GMImageLayer",
+            "mvc": "1.0",
+            "SpriteId": "39f7972f-24d2-49bf-989a-a5a9dd5a303c",
+            "blendMode": 0,
+            "isLocked": false,
+            "name": "Layer 2",
+            "opacity": 100,
+            "visible": true
+        },
+        {
+            "id": "f253cf99-e645-4c38-9428-39df99f63e11",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "39f7972f-24d2-49bf-989a-a5a9dd5a303c",
@@ -90,13 +115,13 @@
             "visible": true
         },
         {
-            "id": "b3e8ab6f-0074-4f64-a504-2d6edf67cd5b",
+            "id": "3a357643-858e-47ff-9989-52a77dfd5efa",
             "modelName": "GMImageLayer",
             "mvc": "1.0",
             "SpriteId": "39f7972f-24d2-49bf-989a-a5a9dd5a303c",
             "blendMode": 0,
             "isLocked": false,
-            "name": "Layer 2 (2) (2)",
+            "name": "Layer 2 (2)",
             "opacity": 100,
             "visible": true
         }
