@@ -1,5 +1,5 @@
 /// @desc 
-#macro ANGLE_SCAN_TILTMOVE 5
+//#macro ANGLE_SCAN_TILTMOVE 5
 //Get player input
 keyLeft = keyboard_check(vk_left) || keyboard_check(ord("A"));
 keyRight = keyboard_check(vk_right) || keyboard_check(ord("D"));
@@ -20,7 +20,7 @@ if(inputMagnitude){
 	var _condition = 0;  //db
 	
 	//if collision occur, modify next xy position
-	if((CollideMap(colMap,_xNext,_yNext))  ){// || (CollideObj(_xNext,_yNext))){
+	if((CollideTile(colMap,_xNext,_yNext))   || (CollideObj(_xNext,_yNext,obj_Collision64x64))){
 	    var _angleCCW = 0;  var _xNextCCW = 0;  var _yNextCCW = 0;  var _iAngleBiasCCW = 9; var _isCollideCCW = false;
 	    var _angleCW = 0;   var _xNextCW = 0;   var _yNextCW = 0;   var _iAngleBiasCW = 9;  var _isCollideCW = false;
 	    var _angleNext = _dirMove;
@@ -30,13 +30,13 @@ if(inputMagnitude){
 	    _angleCCW = _dirMove + 45;
 	    _xNextCCW = x + lengthdir_x(inputMagnitude * speedWalkX,_angleCCW); 
 	    _yNextCCW = y + lengthdir_y(inputMagnitude * speedWalkX,_angleCCW);
-	    _isCollideCCW = (CollideMap(colMap,_xNextCCW,_yNextCCW))  ;// || (CollideObj(_xNextCCW,_yNextCCW));
+	    _isCollideCCW = (CollideTile(colMap,_xNextCCW,_yNextCCW)) || (CollideObj(_xNextCCW,_yNextCCW,obj_Collision64x64));
 		//show_debug_message("_isCollideCCW=" + string(_isCollideCCW)); //db
 	    //compute tilt move boundary, clock wise
 	    _angleCW = _dirMove - 45;
 	    _xNextCW = x + lengthdir_x(inputMagnitude * speedWalkX,_angleCW); 
 	    _yNextCW = y + lengthdir_y(inputMagnitude * speedWalkX,_angleCW);
-	    _isCollideCW = (CollideMap(colMap,_xNextCW,_yNextCW))  ;// || (CollideObj(_xNextCW,_yNextCW));
+	    _isCollideCW = (CollideTile(colMap,_xNextCW,_yNextCW)) || (CollideObj(_xNextCW,_yNextCW,obj_Collision64x64));
 		show_debug_message("_dirMove= " + string(_dirMove) 
 		+ "  _angleCW= " + string(_angleCW) 
 		+ "  y= " + string(y) 
@@ -47,9 +47,12 @@ if(inputMagnitude){
     
 		
 	    //Able to tilt move, try to tilt
+		
+		/*
+		
 	    if ((_isCollideCCW == false)||(_isCollideCW == false)){
 			_condition = 1;
-			/*
+			
 		
 	        //is able to tilt move CCW?
 	        if (_isCollideCCW == false){  
@@ -102,24 +105,25 @@ if(inputMagnitude){
 	            //override output buffer
 	            _angleNext = _angleCCW; _xNext = _xNextCCW; _yNext = _yNextCCW;
 	        }
-		
-			*/
-		
 	    }
 	    else{  //NOT able to tilt move
+		*/
 	        _condition = 2;
 			_iRollBack = 1;
         
 	        //approach to edge
-	        while(CollideMap(colMap,_xNext,_yNext) && (_iRollBack>=0) ){//|| CollideObj(_xNext,_yNext) || (_iRollBack<=0)){
+	        while(CollideTile(colMap,_xNext,_yNext) && (_iRollBack>=0) || CollideObj(_xNext,_yNext,obj_Collision64x64)){
 	            _iRollBack = _iRollBack - 0.1;
             
 	            //roll back x,yNext from collision point
 	            _xNext = lerp(x,_xNext,_iRollBack);
 	            _yNext = lerp(y,_yNext,_iRollBack);
 	        }
-	    }
-
+	    
+		/*
+		}
+		*/
+		
 	    //checking algorithm
 
 	}
