@@ -1,6 +1,6 @@
 /// @desc 
-#macro ANGLE_SCAN_TILTMOVE 5
-#macro ANGLE_TILE_BOUNDARY 10
+//#macro ANGLE_SCAN_TILTMOVE 5
+//#macro ANGLE_TILE_BOUNDARY 10
 //Get player input
 keyLeft = keyboard_check(vk_left) || keyboard_check(ord("A"));
 keyRight = keyboard_check(vk_right) || keyboard_check(ord("D"));
