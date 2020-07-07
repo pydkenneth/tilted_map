@@ -8,73 +8,49 @@ keyDown = keyboard_check(vk_down) || keyboard_check(ord("S"));
 
 //compute next xy position
 inputMagnitude = (keyRight - keyLeft != 0) || (keyDown - keyUp !=0);
-
 var _dirMove = point_direction(keyLeft, keyUp, keyRight, keyDown);
-
-//show_debug_message("_dirMove = " + string(_dirMove));  //db20200617
-
 var _xSpeed = inputMagnitude * speedWalkX * lengthdir_x(inputMagnitude,_dirMove);
 var _ySpeed = inputMagnitude * speedWalkY * lengthdir_y(inputMagnitude,_dirMove);
-var _xNext0 = x + _xSpeed; var _xNext = _xNext0;
-var _yNext0 = y + _ySpeed; var _yNext = _yNext0;
+var _xNext = floor(x + _xSpeed);
+var _yNext = floor(y + _ySpeed);
 
-//GetPosMaskSelf(_xNext0,_yNext0);
-
-//if collision occur
+//if collision occur, modify next xy position, ref:tilt_move.png
 if(CollideMapSolid3(x,y)){
 
-	//test check points, 8 direction, p:positive, n:negative
-	//instance_destroy(obj_cross_mini);
-	//instance_create_layer(xp,y0,"Instances_debug",obj_cross_mini);
-	//instance_create_layer(xp,yp,"Instances_debug",obj_cross_mini);
-	//instance_create_layer(x0,yn,"Instances_debug",obj_cross_mini);
-	//instance_create_layer(xn,yn,"Instances_debug",obj_cross_mini);	
-	//instance_create_layer(xn,y0,"Instances_debug",obj_cross_mini);
-	//instance_create_layer(xn,yp,"Instances_debug",obj_cross_mini);
-	//instance_create_layer(x0,yp,"Instances_debug",obj_cross_mini);
-	//instance_create_layer(xp,yn,"Instances_debug",obj_cross_mini);
-	//show_debug_message("BUMP");
-}
-else{
-	show_debug_message("SAFE");
-}
-
-/*
-//if collision occur, modify next xy position, ref:tilt_move.png
-if(CollideSolidMap3(x,y)){
-	var _angleCCW = 0;  var _xNextCCW = 0;  var _yNextCCW = 0;  var _iAngleBiasCCW = 0; var _isCollideCCW = true;
-	var _angleCW = 0;   var _xNextCW = 0;   var _yNextCW = 0;   var _iAngleBiasCW = 0;  var _isCollideCW = true;
-	var _angleNext = _dirMove;
-	var _iRollBack = 1;
-    
 	//scan CCW
+	var _angleCCW = 0;  var _xNextCCW = 0;  var _yNextCCW = 0;  var _iAngleBiasCCW = 0; var _isCollideCCW = true;
 	while((_iAngleBiasCCW<=ANGLE_TILE_BOUNDARY) && _isCollideCCW){
 	    _iAngleBiasCCW = _iAngleBiasCCW + 1;
 	    _angleCCW = _dirMove + (_iAngleBiasCCW * ANGLE_SCAN_TILTMOVE);
-	    _xNextCCW = x + lengthdir_x(inputMagnitude * speedWalkX, _angleCCW); 
-		_yNextCCW = y + lengthdir_y(inputMagnitude * speedWalkX, _angleCCW);
-	    _isCollideCCW = CollideSolidMap3(_xNextCCW,_yNextCCW);
+	    _xNextCCW = floor(x + lengthdir_x(inputMagnitude * speedWalkX, _angleCCW)); 
+		_yNextCCW = floor(y + lengthdir_y(inputMagnitude * speedWalkX, _angleCCW));
+	    _isCollideCCW = CollideMapSolid3(_xNextCCW,_yNextCCW);
 	}
 	
 	//scan CW
+	var _angleCW = 0;   var _xNextCW = 0;   var _yNextCW = 0;   var _iAngleBiasCW = 0;  var _isCollideCW = true;
 	while((_iAngleBiasCW<=ANGLE_TILE_BOUNDARY) && _isCollideCW){
 	    _iAngleBiasCW = _iAngleBiasCW + 1;
 	    _angleCW = _dirMove - (_iAngleBiasCW * ANGLE_SCAN_TILTMOVE);
-	    _xNextCW = x + lengthdir_x(inputMagnitude * speedWalkX, _angleCW); 
-		_yNextCW = y + lengthdir_y(inputMagnitude * speedWalkX, _angleCW);
-	    _isCollideCW = CollideSolidMap3(_xNextCW,_yNextCW);
+	    _xNextCW = floor(x + lengthdir_x(inputMagnitude * speedWalkX, _angleCW)); 
+		_yNextCW = floor(y + lengthdir_y(inputMagnitude * speedWalkX, _angleCW));
+	    _isCollideCW = CollideMapSolid3(_xNextCW,_yNextCW);
 	}
 	
+	//if uable to tilt, approach. if able to tilt, tilt.
+	var _iRollBack = 1;	var _angleNext = _dirMove;
 	if((_iAngleBiasCCW>=ANGLE_TILE_BOUNDARY)&&(_iAngleBiasCW>=ANGLE_TILE_BOUNDARY)){  //if CCW = +50, CW = -50, unable to tilt
+
 		
 		//approach to edge
-		while(CollideSolidMap3(_xNext,_yNext)&& (_iRollBack>=0)){
+		while(CollideMapSolid3(_xNext,_yNext)&& (_iRollBack>=0)){
 	        _iRollBack = _iRollBack - 0.1;
             
 	        //roll back x,yNext from collision point
 	        _xNext = lerp(x,_xNext,_iRollBack);
 	        _yNext = lerp(y,_yNext,_iRollBack);
 	    }
+		
 		if(_iRollBack < 0){_iRollBack = 0; _xNext = x; _yNext = y;}
 		show_debug_message("approaching: "
 		+ "x: " + string(x)
@@ -102,8 +78,8 @@ if(CollideSolidMap3(x,y)){
 	}
 		
 	//checking algorithm
-	if(CollideSolidMap3(_xNext,_yNext)){show_error("Illegal Position: Collide Solid Map", true);}
-}*/
+	//if(CollideMapSolid3(_xNext,_yNext)){show_error("Illegal Position: Collide Solid Map", true);}
+}
 //update xy with next xy position
 x = _xNext;  y = _yNext;
 

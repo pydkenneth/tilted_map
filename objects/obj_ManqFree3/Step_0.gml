@@ -1,5 +1,5 @@
 /// @desc 
-
+/*
 //Get player input
 keyLeft = keyboard_check(vk_left) || keyboard_check(ord("A"));
 keyRight = keyboard_check(vk_right) || keyboard_check(ord("D"));
@@ -81,7 +81,7 @@ if(CollideMapSolid3(_xNext0,_yNext0)){
 	//checking algorithm
 	if(CollideMapSolid3(_xNext,_yNext)){show_error("Illegal Position: Collide Solid Map", true);}
 }
-
+*/
 //update xy with next xy position
 x = _xNext;  y = _yNext;
 
