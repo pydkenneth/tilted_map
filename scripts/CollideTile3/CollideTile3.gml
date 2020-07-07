@@ -1,4 +1,4 @@
-///@desc CollideTile()
+///@desc CollideTile3()
 ///@arg collisionTile
 ///@arg x
 ///@arg y

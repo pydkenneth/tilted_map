@@ -14,11 +14,11 @@ var _dirMove = point_direction(keyLeft, keyUp, keyRight, keyDown);
 
 var _xSpeed = inputMagnitude * speedWalkX * lengthdir_x(inputMagnitude,_dirMove);
 var _ySpeed = inputMagnitude * speedWalkY * lengthdir_y(inputMagnitude,_dirMove);
-var _xNext = x + _xSpeed;
-var _yNext = y + _ySpeed;
+var _xNext0 = x + _xSpeed; var _xNext = _xNext0;
+var _yNext0 = y + _ySpeed; var _yNext = _yNext0;
 
 //if collision occur, modify next xy position
-if(CollideSolidMap3(_xNext,_yNext)){
+if(CollideMapSolid3(_xNext0,_yNext0)){
 	var _angleCCW = 0;  var _xNextCCW = 0;  var _yNextCCW = 0;  var _iAngleBiasCCW = 0; var _isCollideCCW = true;
 	var _angleCW = 0;   var _xNextCW = 0;   var _yNextCW = 0;   var _iAngleBiasCW = 0;  var _isCollideCW = true;
 	var _angleNext = _dirMove;
@@ -30,7 +30,7 @@ if(CollideSolidMap3(_xNext,_yNext)){
 	    _angleCCW = _dirMove + (_iAngleBiasCCW * ANGLE_SCAN_TILTMOVE);
 	    _xNextCCW = x + lengthdir_x(inputMagnitude * speedWalkX, _angleCCW); 
 		_yNextCCW = y + lengthdir_y(inputMagnitude * speedWalkX, _angleCCW);
-	    _isCollideCCW = CollideSolidMap3(_xNextCCW,_yNextCCW);
+	    _isCollideCCW = CollideMapSolid3(_xNextCCW,_yNextCCW);
 	}
 	
 	//scan CW
@@ -39,13 +39,13 @@ if(CollideSolidMap3(_xNext,_yNext)){
 	    _angleCW = _dirMove - (_iAngleBiasCW * ANGLE_SCAN_TILTMOVE);
 	    _xNextCW = x + lengthdir_x(inputMagnitude * speedWalkX, _angleCW); 
 		_yNextCW = y + lengthdir_y(inputMagnitude * speedWalkX, _angleCW);
-	    _isCollideCW = CollideSolidMap3(_xNextCW,_yNextCW);
+	    _isCollideCW = CollideMapSolid3(_xNextCW,_yNextCW);
 	}
 	
 	if((_iAngleBiasCCW>=ANGLE_TILE_BOUNDARY)&&(_iAngleBiasCW>=ANGLE_TILE_BOUNDARY)){  //if CCW = +50, CW = -50, unable to tilt
 		
 		//approach to edge
-		while(CollideSolidMap3(_xNext,_yNext)&& (_iRollBack>=0)){
+		while(CollideMapSolid3(_xNext,_yNext)&& (_iRollBack>=0)){
 	        _iRollBack = _iRollBack - 0.1;
             
 	        //roll back x,yNext from collision point
@@ -53,10 +53,12 @@ if(CollideSolidMap3(_xNext,_yNext)){
 	        _yNext = lerp(y,_yNext,_iRollBack);
 	    }
 		if(_iRollBack < 0){_iRollBack = 0; _xNext = x; _yNext = y;}
-		show_debug_message("approaching: " 
-		+ "_xNext" + string(_xNext)
-		+ ", _yNext" + string(_yNext)
-		+ ", _iRollBack" + string(_iRollBack)
+		show_debug_message("approaching: "
+		+ "x: " + string(x)
+		+ ", y: " + string(y)
+		+ " _xNext: " + string(_xNext)
+		+ ", _yNext: " + string(_yNext)
+		+ ", _iRollBack: " + string(_iRollBack)
 		);
 	}else{  
 		
@@ -77,7 +79,7 @@ if(CollideSolidMap3(_xNext,_yNext)){
 	}
 		
 	//checking algorithm
-	if(CollideSolidMap3(_xNext,_yNext)){show_error("Illegal Position: Collide Solid Map", true);}
+	if(CollideMapSolid3(_xNext,_yNext)){show_error("Illegal Position: Collide Solid Map", true);}
 }
 
 //update xy with next xy position
