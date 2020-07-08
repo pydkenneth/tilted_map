@@ -1,4 +1,5 @@
 /// @desc 
+/// refs:tilt_move_3_2.png
 
 //Get player input
 keyLeft = keyboard_check(vk_left) || keyboard_check(ord("A"));
@@ -74,17 +75,6 @@ if(IS_PLAYER_MOVING && CollideMapSolid3(_xNext,_yNext)){
 		//approach to edge
 		var _iStepSnap = 0; //var _xNextCompute = x; var _yNextCompute = y;
 		
-		/*
-		while((!CollideMapSolid3(_xNextCompute,_yNextCompute)) && (_iStepSnap<=1)){
-	        _iStepSnap = _iStepSnap + 0.1;
-            
-	        //roll back xNext,yNext from collision point
-	        _xNextCompute = floor(lerp(x,_xNext,_iStepSnap));
-	        _yNextCompute = floor(lerp(y,_yNext,_iStepSnap));
-			_col = !CollideMapSolid3(_xNextCompute,_yNextCompute);
-	    }
-		*/
-		
 		//roll foward to edge
 		for(var _iStepSnap = 0; _iStepSnap <= 1.0; _iStepSnap = _iStepSnap + 0.01;)
 		{
@@ -110,9 +100,7 @@ if(IS_PLAYER_MOVING && CollideMapSolid3(_xNext,_yNext)){
 	default: break;
 	}
 }
-else{
-	
-}
+else{}
 
 //checking algorithm
 if(CollideMapSolid3(x,y)){show_error("Illegal Position: STUCK x y",true);}
