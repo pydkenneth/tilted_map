@@ -11,10 +11,10 @@ var _y = argument1;
 //determine collision
 
 if(CollideObj3(_x,_y)){
-	show_debug_message("Bump: OBJ of obj_Collision");  
+	//show_debug_message("Bump: OBJ of obj_Collision");  
 	return IS_COLLIDE;
 }else if(CollideTile3(sys_Collision.gridmapCollisionTile, _x, _y)){
-	show_debug_message("Bump: TILE of solid map"); 
+	//show_debug_message("Bump: TILE of solid map"); 
 	return IS_COLLIDE;
 }else{
 	return NOT_COLLIDE;

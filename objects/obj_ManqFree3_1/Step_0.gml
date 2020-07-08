@@ -15,7 +15,7 @@ var _xNext = floor(x + _xSpeed);
 var _yNext = floor(y + _ySpeed);
 
 //if collision occur, modify next xy position, ref:tilt_move.png
-if(CollideMapSolid3(x,y)){
+if(CollideMapSolid3(_xNext,_yNext)){
 
 	//scan CCW
 	var _angleCCW = 0;  var _xNextCCW = 0;  var _yNextCCW = 0;  var _iAngleBiasCCW = 0; var _isCollideCCW = true;
@@ -78,7 +78,7 @@ if(CollideMapSolid3(x,y)){
 	}
 		
 	//checking algorithm
-	//if(CollideMapSolid3(_xNext,_yNext)){show_error("Illegal Position: Collide Solid Map", true);}
+	if(CollideMapSolid3(_xNext,_yNext)){show_error("Illegal Position: Collide Solid Map", true);}
 }
 //update xy with next xy position
 x = _xNext;  y = _yNext;
