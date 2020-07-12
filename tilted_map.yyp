@@ -79,6 +79,14 @@
             }
         },
         {
+            "Key": "2470d223-8da9-4f9b-9b1f-4545865315c4",
+            "Value": {
+                "id": "6f1fe9e7-2705-4c2d-9a1c-79dd160abc98",
+                "resourcePath": "scripts\\ScanAngleTilt\\ScanAngleTilt.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "2e3fee14-1c56-49e7-86ca-602994b3a466",
             "Value": {
                 "id": "8086a433-b004-4985-97aa-fc2885b051eb",
@@ -191,6 +199,14 @@
             }
         },
         {
+            "Key": "72ddf789-f50a-479d-b6a2-5687973dd088",
+            "Value": {
+                "id": "e64b630c-b931-4348-82ea-ad00e2be1c39",
+                "resourcePath": "scripts\\GetPlayerInput\\GetPlayerInput.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "785652d3-fcd3-46fe-9dbe-66f7589ae71d",
             "Value": {
                 "id": "a5a50e18-2a37-4cb5-9a5b-d53b11af61bc",
@@ -212,6 +228,14 @@
                 "id": "005082b7-854e-4b13-98d5-9a56b8533037",
                 "resourcePath": "objects\\obj_ManqGrid\\obj_ManqGrid.yy",
                 "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "82524cc9-9ab5-488a-9352-b6968b41801b",
+            "Value": {
+                "id": "1c91372a-841b-4d11-a551-c9c0a2e09700",
+                "resourcePath": "scripts\\GetPosNext\\GetPosNext.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -324,6 +348,14 @@
                 "id": "932ed688-171e-4e07-9a44-11b9663e21a9",
                 "resourcePath": "sprites\\spr_Collision64x64\\spr_Collision64x64.yy",
                 "resourceType": "GMSprite"
+            }
+        },
+        {
+            "Key": "c74a1d7d-ab36-46e9-bf65-17f8b2ae9b23",
+            "Value": {
+                "id": "3ab8aa3c-7d23-4dd0-b2d1-93e8537b472b",
+                "resourcePath": "scripts\\MoveTilt\\MoveTilt.yy",
+                "resourceType": "GMScript"
             }
         },
         {
@@ -495,6 +527,14 @@
             }
         },
         {
+            "Key": "fd5a10b8-e233-44f6-94c0-6008fc97e663",
+            "Value": {
+                "id": "e5a91762-8b89-4a73-9bae-cdb57c3eedf6",
+                "resourcePath": "scripts\\MoveSnap\\MoveSnap.yy",
+                "resourceType": "GMScript"
+            }
+        },
+        {
             "Key": "fe2aff77-a6d6-4be5-bec8-2aeee37c8d60",
             "Value": {
                 "id": "4087f534-2867-4544-9e2a-8c4925bc0cb2",
@@ -511,7 +551,12 @@
         "d87998ac-6ec2-496d-820a-20eaa0261ce7",
         "936dc69d-d649-4581-97d7-6d7831f5108e",
         "ca991926-3641-4092-9898-a4028c02cc6b",
-        "f91ff293-d752-4fa3-a9bc-5e55721a2b71"
+        "f91ff293-d752-4fa3-a9bc-5e55721a2b71",
+        "2470d223-8da9-4f9b-9b1f-4545865315c4",
+        "c74a1d7d-ab36-46e9-bf65-17f8b2ae9b23",
+        "fd5a10b8-e233-44f6-94c0-6008fc97e663",
+        "72ddf789-f50a-479d-b6a2-5687973dd088",
+        "82524cc9-9ab5-488a-9352-b6968b41801b"
     ],
     "tutorial": ""
 }
