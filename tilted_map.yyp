@@ -87,6 +87,14 @@
             }
         },
         {
+            "Key": "2673a718-33fe-4f1c-9fc0-42cf852cf9f4",
+            "Value": {
+                "id": "49cfbc1e-71ef-470d-a581-e40b74d3ae80",
+                "resourcePath": "sprites\\spr_Mannequin3_3\\spr_Mannequin3_3.yy",
+                "resourceType": "GMSprite"
+            }
+        },
+        {
             "Key": "2e3fee14-1c56-49e7-86ca-602994b3a466",
             "Value": {
                 "id": "8086a433-b004-4985-97aa-fc2885b051eb",
@@ -163,6 +171,14 @@
             "Value": {
                 "id": "dd58e48d-5a6c-46cc-bc36-b99f0cf927bb",
                 "resourcePath": "objects\\obj_ManqFree3_2\\obj_ManqFree3_2.yy",
+                "resourceType": "GMObject"
+            }
+        },
+        {
+            "Key": "63dc8cd0-23cc-4260-84bd-93638a7a4752",
+            "Value": {
+                "id": "f6c0e364-fc83-464e-aec1-9db974fd8c7f",
+                "resourcePath": "objects\\obj_ManqFree3_3\\obj_ManqFree3_3.yy",
                 "resourceType": "GMObject"
             }
         },
@@ -500,6 +516,14 @@
                 "id": "7fc1dd9d-3ebc-4e38-8f40-846da7e5d63d",
                 "resourcePath": "options\\mac\\options_mac.yy",
                 "resourceType": "GMMacOptions"
+            }
+        },
+        {
+            "Key": "f74cdc45-f089-46bb-9305-b2a17d56e55c",
+            "Value": {
+                "id": "12f63096-ea7d-418d-8b7f-fd8b5ace9488",
+                "resourcePath": "rooms\\rm_Free3_3\\rm_Free3_3.yy",
+                "resourceType": "GMRoom"
             }
         },
         {
