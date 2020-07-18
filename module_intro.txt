@@ -1,0 +1,34 @@
+此包檔案包含兩個部份：
+
+1.自由移動組件, Free系列
+
+測試：把Rooms第一張地圖設成 rm_free，然後執行遊戲。
+
+Resource包含：
+1. sprgroup_Free
+2. tilgroup_Free
+3. scrgroup_Free
+4. objgroup_Free
+5. rm_Free
+
+主程式：
+obj_ManqFree.step
+
+
+
+2.偏斜棋盤移動
+
+測試：把Rooms第一張地圖設成 rm_Grid，然後執行遊戲。
+
+Resource：
+1. sprgroup_GridTilt
+2. tilgroup_GridTilt
+3. scrgroup_GridTilt
+4. objgroup_GridTilt
+5. rm_GridTilt
+
+主程式：
+obj_ManqGrid.step
+
+
+設計/ coding：潘潘桑 20200718

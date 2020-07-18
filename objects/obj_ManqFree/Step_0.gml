@@ -3,7 +3,6 @@
 GetPlayerInput();
 var _posCurrent = [x,y];
 var _posNext = GetPosNext();  //[x,y]
-var _phaseMethodMove = MODE_MOVE_EDGE.SNAP_TO_EDGE;
 
 if(IS_PLAYER_MOVING && CollideMapSolid3(_posNext)){
 	

@@ -4,10 +4,8 @@
     "mvc": "1.1",
     "name": "713c3a53-d127-478d-aecc-a31cbc4dce23",
     "children": [
-        "c0c0ab09-8b36-43d1-8499-2e0c96b9cc40",
-        "4136ac9d-a0bd-4fc4-ad4c-83c7364b3ebc",
-        "dfa5aa29-cbc5-414f-a5e3-ee522ff14165",
-        "c29bade0-14ed-4bbe-8d4b-94b6cd91b377"
+        "5d114992-7c3b-4f85-8202-39eab765160a",
+        "47e3f7ef-2bda-49ab-a617-a9b2915d7681"
     ],
     "filterType": "GMTileSet",
     "folderName": "tilesets",

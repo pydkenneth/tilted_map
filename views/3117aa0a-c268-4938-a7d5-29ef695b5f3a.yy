@@ -17,7 +17,7 @@
         "d87998ac-6ec2-496d-820a-20eaa0261ce7"
     ],
     "filterType": "GMScript",
-    "folderName": "scr_Free",
+    "folderName": "scrgroup_Free",
     "isDefaultView": false,
     "localisedFolderName": ""
 }
