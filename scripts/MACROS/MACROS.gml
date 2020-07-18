@@ -22,26 +22,3 @@ enum MODE_MOVE_EDGE{
 #macro ID_Y 1
 #macro ID_AbleTilt 2
 #macro ID_AngleTilt 3
-
-#macro SHOW_MSG_TILT show_debug_message("tilting: " \
-				+ "_angleNext: " + string(_angleNext) \
-				+ ", _angleTilt: " + string(_angleTilt) \
-				+ ", _xNext" + string(_xNext) \
-				+ ", _yNext" + string(_yNext) \
-				);
-				
-#macro SHOW_MSG_SNAP show_debug_message("approaching: " \
-		+ "x: " + string(x) \
-		+ ", y: " + string(y) \
-		+ " _xNext: " + string(_xNext) \
-		+ ", _yNext: " + string(_yNext) \
-		+ ", _iRollBack: " + string(_iRollBack) \
-		);
-		
-#macro SHOW_MSG_SNAP3_2 show_debug_message("approaching: " \
-		+ "x: " + string(x) \
-		+ ", y: " + string(y) \
-		+ " _xNext: " + string(_xNext) \
-		+ ", _yNext: " + string(_yNext) \
-		+ ", bbox_bottom: " + string(bbox_bottom) \
-		);

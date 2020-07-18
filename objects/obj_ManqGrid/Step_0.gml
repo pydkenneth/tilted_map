@@ -1,18 +1,15 @@
 /// @desc 
-//Get player input
-keyLeft = keyboard_check_pressed(vk_left) || keyboard_check_pressed(ord("A"));
-keyRight = keyboard_check_pressed(vk_right) || keyboard_check_pressed(ord("D"));
-keyUp = keyboard_check_pressed(vk_up) || keyboard_check_pressed(ord("W"));
-keyDown = keyboard_check_pressed(vk_down) || keyboard_check_pressed(ord("S"));
+GetPlayerInput_Grid();
 
 //Compute movement, ref:tilt_grid.png
-var _keyY = keyDown-keyUp;
-inputDirection = point_direction(0,0,(keyRight-keyLeft),_keyY);
-inputMagnitude = (keyRight - keyLeft != 0) || (keyDown - keyUp !=0);
-ySpeed = speedWalkY*inputMagnitude*_keyY;
-xSpeed = (speedWalkX*inputMagnitude*(keyRight-keyLeft)) + (ySpeed*global.TILT_CONST);
+var _keyY = keyDown-keyUp;    var _keyX = keyRight-keyLeft;
+var _ySpeed = speedWalkY * inputMagnitude * _keyY;
+var _xSpeed = (speedWalkX * inputMagnitude * _keyX) 
+			+ (_ySpeed * global.TILT_CONST);    //Tilt in x direction when move along y axis
 
+//Update position
+x += _xSpeed;  y += _ySpeed;
 
-//Update position, sprite
-x+=xSpeed;  y+=ySpeed;
-if(keyLeft||keyRight||keyUp||keyDown){image_index = round(inputDirection/90);}
+//update sprite
+var _inputDirection = point_direction(0, 0, _keyX, _keyY);
+if(keyLeft||keyRight||keyUp||keyDown){ image_index = round(_inputDirection/90); }
