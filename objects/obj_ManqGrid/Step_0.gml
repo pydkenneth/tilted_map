@@ -5,7 +5,7 @@ GetPlayerInput_Grid();
 var _keyY = keyDown-keyUp;    var _keyX = keyRight-keyLeft;
 var _ySpeed = speedWalkY * inputMagnitude * _keyY;
 var _xSpeed = (speedWalkX * inputMagnitude * _keyX) 
-			+ (_ySpeed * global.TILT_CONST);    //Tilt in x direction when move along y axis
+            + (_ySpeed * global.TILT_CONST);    //Tilt in x direction when move along y axis
 
 //Update position
 x += _xSpeed;  y += _ySpeed;
